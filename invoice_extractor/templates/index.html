@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice Extractor</title>
+</head>
+<body>
+    <h1>Invoice Extractor</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Upload</button>
+    </form>
+    {% if extracted_data %}
+        <h2>Extracted Data:</h2>
+        <pre>{{ extracted_data }}</pre>
+    {% endif %}
+</body>
+</html>
+
